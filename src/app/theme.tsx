@@ -4,14 +4,14 @@ export interface ThemeState {
   isDarkTheme: boolean;
 }
 
-const initialState = { isDarkTheme: false };
+const initialState = { isDarkTheme: true } as ThemeState;
 
 export const themeState = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    changeTheme: (state, action) => {
-      state.isDarkTheme = action.payload;
+    changeTheme: (state) => {
+      state.isDarkTheme = !state.isDarkTheme;
     },
   },
 });

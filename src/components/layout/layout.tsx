@@ -1,23 +1,19 @@
-import { sprinkles } from "@/styles/sprinkles.css";
 import { darkTheme, lightTheme } from "@/styles/theme.css";
-import { ReactNode, useState } from "react";
-import { changeThemeButton, layout, circleBox, left, right } from "./style.css";
-
+import { ReactNode } from "react";
+import { layout } from "./style.css";
+import { RootState } from "src/app/store";
+import ChangeThemeButton from "../libs/ChangeThemeButton";
+import { useAppSelector } from "src/app/hooks";
 const LayoutComponent = ({ children }: { children: ReactNode }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const isDarkTheme = useAppSelector(
+    (state: RootState) => state.theme.isDarkTheme
+  );
   return (
     <div
       className={`${layout} ${isDarkTheme ? darkTheme : lightTheme}`}
       id="app"
     >
-      <button
-        className={`${changeThemeButton}  ${sprinkles({
-          background: isDarkTheme ? "black" : "orange",
-        })}`}
-        onClick={() => setIsDarkTheme(!isDarkTheme)}
-      >
-        <div className={`${circleBox} ${isDarkTheme ? left : right}`} />
-      </button>
+      <ChangeThemeButton />
       <div>{children}</div>
     </div>
   );

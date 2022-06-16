@@ -26,3 +26,27 @@ export const nameLinkBox = style({
   borderBottom: `1px solid ${vars.colors.text.normal}`,
   width: "fit-content",
 });
+
+export const changeThemeButton = style({
+  width: 60,
+  height: 30,
+  borderRadius: 20,
+  position: "relative",
+});
+
+export const circleBox = style({
+  height: "80%",
+  width: "40%",
+  borderRadius: "100%",
+  backgroundColor: "white",
+  position: "absolute",
+  top: "50%",
+  transition: `all 50ms linear`,
+});
+
+export const left = style({
+  transform: `translate(130%,-50%)`,
+});
+export const right = style({
+  transform: `translate(15%, -50%)`,
+});

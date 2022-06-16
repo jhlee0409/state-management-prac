@@ -5,7 +5,7 @@ import BerryList from "@/components/berryList";
 export const getServerSideProps = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery("poke-list", () => getPokes(), {
-    staleTime: 1000,
+    staleTime: 10000,
   });
   const dehydratedState = dehydrate(queryClient);
 

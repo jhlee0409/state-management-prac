@@ -1,16 +1,18 @@
 import { keyframes, globalStyle } from "@vanilla-extract/css";
+import { vars } from "./theme.css";
 
 const fadeInAnimation = keyframes({
   "0%": { transform: "translateX(-20px)", opacity: 0 },
   "100%": { transform: "translateX(0)", opacity: 1 },
 });
 
-globalStyle("html, body", {
-  fontFamily: "Noto Sans KR, sans-serif",
+globalStyle("#app", {
+  padding: vars.space["1x"],
+  fontFamily: vars.fonts.fontFamily,
+  backgroundColor: vars.colors.background,
+  minHeight: "100vh",
 });
-globalStyle("body", {
-  backgroundColor: "#1b1b1b",
-});
+
 globalStyle("main > div", {
   animation: `${fadeInAnimation} ease 500ms`,
   animationFillMode: "forwards",
@@ -18,8 +20,5 @@ globalStyle("main > div", {
 });
 
 globalStyle("p, span, label, button, a, div", {
-  color: "white",
+  color: vars.colors.text.normal,
 });
-// globalStyle("a", {
-//   textDecoration: "underline",
-// });

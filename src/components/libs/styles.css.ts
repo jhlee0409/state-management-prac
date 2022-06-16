@@ -1,3 +1,4 @@
+import { vars } from "@/styles/theme.css";
 import { globalStyle, style } from "@vanilla-extract/css";
 
 export const disableLink = style({
@@ -12,7 +13,7 @@ export const pagingBtnBox = style({
   padding: "20px 0",
 });
 globalStyle(`${pagingBtnBox} > a`, {
-  border: "1px solid white",
+  border: `1px solid ${vars.colors.text.normal}`,
   padding: "5px 10px",
   borderRadius: 12,
 });
@@ -22,6 +23,6 @@ export const nameLinkBox = style({
   gap: 5,
   alignItems: "center",
   fontWeight: "bold",
-  borderBottom: "1px solid white",
+  borderBottom: `1px solid ${vars.colors.text.normal}`,
   width: "fit-content",
 });

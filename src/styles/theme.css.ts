@@ -1,32 +1,38 @@
-// import { darkTheme } from "@/styles/theme.css";
-import { createTheme, globalStyle, style } from "@vanilla-extract/css";
+import {
+  createGlobalTheme,
+  createTheme,
+  createThemeContract,
+} from "@vanilla-extract/css";
+import { vars as root } from "./vars.css";
 
-export const [themeClass, vars] = createTheme({
-  color: {
-    default: "white",
-    dark: "#1b1b1b",
+const colors = createThemeContract({
+  primary: null,
+  secondary: null,
+  background: null,
+  text: {
+    normal: null,
+    dimmed: null,
   },
-  font: {
-    body: "arial",
+});
+
+export const lightTheme = createTheme(colors, {
+  primary: "#1E40AF",
+  secondary: "#DB2777",
+  background: "white",
+  text: {
+    normal: "black",
+    dimmed: "#6B7280",
   },
 });
 
-export const defaultTheme = style({
-  backgroundColor: vars.color.default,
-  fontFamily: vars.font.body,
-  padding: 10,
+export const darkTheme = createTheme(colors, {
+  primary: "#60A5FA",
+  secondary: "#F472B6",
+  background: "#1B1B1B",
+  text: {
+    normal: "white",
+    dimmed: "#D1D5DB",
+  },
 });
 
-globalStyle(`${defaultTheme} p, a, button, h1, h3, span`, {
-  color: vars.color.dark,
-});
-
-export const darkTheme = style({
-  backgroundColor: vars.color.dark,
-  fontFamily: vars.font.body,
-  padding: 10,
-});
-
-globalStyle(`${darkTheme} p, a, button, h1, h3, span`, {
-  color: vars.color.default,
-});
+export const vars = { ...root, colors };

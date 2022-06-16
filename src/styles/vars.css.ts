@@ -1,6 +1,10 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-export const vars = createGlobalTheme(":root", {
+export const vars = createGlobalTheme("#app", {
+  fonts: {
+    fontFamily: "Noto Sans KR, sans-serif",
+    body: "system-ui",
+  },
   space: {
     none: "0",
     "0x": "0px",

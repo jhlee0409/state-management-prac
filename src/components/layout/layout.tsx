@@ -1,19 +1,14 @@
-import { darkTheme, defaultTheme, themeClass } from "@/styles/theme.css";
+import { darkTheme, lightTheme } from "@/styles/theme.css";
 import { ReactNode, useState } from "react";
 import { layout } from "./style.css";
 
 const LayoutComponent = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState("dark");
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   return (
-    <div className={themeClass}>
-      <button
-        onClick={() => setTheme(theme === "default" ? "dark" : "default")}
-      >
-        theme
-      </button>
-      <div className={`${theme === "default" ? defaultTheme : darkTheme}`}>
-        {children}
-      </div>
+    <div className={`${isDarkTheme ? darkTheme : lightTheme}`} id="app">
+      <button onClick={() => setIsDarkTheme(!isDarkTheme)}>theme</button>
+      <p>{`current Theme : ${isDarkTheme ? "dark" : "light"}`}</p>
+      <div>{children}</div>
     </div>
   );
 };

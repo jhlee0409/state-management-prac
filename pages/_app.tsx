@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import "@/styles/reset.css";
-import { themeClass } from "@/styles/theme.css";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { NextComponentType } from "next";

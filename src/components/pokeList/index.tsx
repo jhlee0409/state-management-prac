@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { getPokes } from "@/apis/pokeApi";
 import ListLayout from "../layout/ListLayout";
 import ListLink from "../libs/ListLink";
+import List from "../libs/List";
 
 const PokeList = () => {
   const router = useRouter();
@@ -12,10 +13,8 @@ const PokeList = () => {
   );
   if (isLoading) return <p>로딩중</p>;
   return (
-    <ListLayout count={data.count} title="POKE">
-      {data?.results?.map((item: { name: string; url: string }) => {
-        return <ListLink data={item} key={item.name} />;
-      })}
+    <ListLayout count={data.count} title="poke">
+      <List data={data.results} />
     </ListLayout>
   );
 };

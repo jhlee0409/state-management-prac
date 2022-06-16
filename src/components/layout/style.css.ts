@@ -16,3 +16,9 @@ export const listWrapper = style({
 globalStyle(`${listWrapper}  h3`, {
   textTransform: "uppercase",
 });
+
+export const ListLayoutWrapper = style({});
+
+globalStyle(`${ListLayoutWrapper} > h1`, {
+  textTransform: "uppercase",
+});

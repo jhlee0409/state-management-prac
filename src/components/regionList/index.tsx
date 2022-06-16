@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { getRegions } from "@/apis/regionAPi";
 import ListLayout from "../layout/ListLayout";
 import ListLink from "../libs/ListLink";
+import List from "../libs/List";
 
 const RegionList = () => {
   const router = useRouter();
@@ -12,10 +13,8 @@ const RegionList = () => {
   );
   if (isLoading) return <p>로딩중</p>;
   return (
-    <ListLayout title="REGION" count={data.count}>
-      {data?.results?.map((item: { name: string; url: string }) => {
-        return <ListLink key={item.name} data={item} />;
-      })}
+    <ListLayout title="region" count={data.count}>
+      <List data={data.results} />
     </ListLayout>
   );
 };

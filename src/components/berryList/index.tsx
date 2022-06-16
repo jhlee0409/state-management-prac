@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { getBerries } from "@/apis/barryApi";
 import ListLayout from "../layout/ListLayout";
 import ListLink from "../libs/ListLink";
+import List from "../libs/List";
 
 const BerryList = () => {
   const router = useRouter();
@@ -12,10 +13,8 @@ const BerryList = () => {
   );
   if (isLoading) return <p>로딩중</p>;
   return (
-    <ListLayout title="BERRY" count={data.count}>
-      {data?.results?.map((item: { name: string; url: string }) => {
-        return <ListLink data={item} key={item.name} />;
-      })}
+    <ListLayout title="berry" count={data.count}>
+      <List data={data.results} />
     </ListLayout>
   );
 };

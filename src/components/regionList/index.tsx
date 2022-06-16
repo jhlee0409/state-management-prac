@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { getRegions } from "@/apis/regionAPi";
 import ListLayout from "../layout/ListLayout";
-import ListLink from "../libs/ListLink";
 import List from "../libs/List";
 
 const RegionList = () => {

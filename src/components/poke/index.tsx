@@ -24,14 +24,13 @@ const Poke = () => {
   const { data, isLoading } = useQuery<any>(["poke", router.query.slug], () =>
     getPoke(+router.query.slug!)
   );
-  console.log(data);
 
   const slug = +router.query.slug!;
 
   if (isLoading) return <p>로딩중</p>;
   return (
     <div className={pokeWrapper}>
-      <PagingButtons url="poke" disablePrev={slug === 1} />
+      <PagingButtons url="pokemon" disablePrev={slug === 1} />
       <div className={pokeWrapper}>
         <PokeImageList data={data} />
         <BaseInfo data={data} />

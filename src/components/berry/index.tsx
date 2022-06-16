@@ -19,7 +19,7 @@ const Berry = () => {
   );
   if (isLoading) return <p>로딩중</p>;
   return (
-    <div className={pokeWrapper}>
+    <main className={pokeWrapper}>
       <PagingButtons url="berry" />
       <div className={pokeWrapper}>
         <BaseInfo data={data} />
@@ -28,7 +28,7 @@ const Berry = () => {
           <Flavors flavors={data.flavors} />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

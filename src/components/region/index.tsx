@@ -17,7 +17,7 @@ const Region = () => {
   console.log(data);
   if (isLoading) return <p>로딩중</p>;
   return (
-    <div className={pokeWrapper}>
+    <main className={pokeWrapper}>
       <PagingButtons url="region" />
       <div className={pokeWrapper}>
         <BaseInfo data={data} />
@@ -28,7 +28,7 @@ const Region = () => {
           <VersionGroups data={data.version_groups} />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

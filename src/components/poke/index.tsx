@@ -29,7 +29,7 @@ const Poke = () => {
 
   if (isLoading) return <p>로딩중</p>;
   return (
-    <div className={pokeWrapper}>
+    <main className={pokeWrapper}>
       <PagingButtons url="pokemon" disablePrev={slug === 1} />
       <div className={pokeWrapper}>
         <PokeImageList data={data} />
@@ -48,7 +48,7 @@ const Poke = () => {
           <Moves moves={data.moves} />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

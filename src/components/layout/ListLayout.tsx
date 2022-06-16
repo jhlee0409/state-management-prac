@@ -13,18 +13,20 @@ const ListLayout = ({ title, children, count }: ListLayoutInterface) => {
   const router = useRouter();
   const slug = +router.query.slug!;
   return (
-    <div className={ListLayoutWrapper}>
-      <h1>{`< ${title} list >`}</h1>
-      <p>{count}</p>
-      <p>{`${slug + 1} - ${slug + 20}`}</p>
-      <PagingButtons
-        url={`${title}-list`}
-        offset={20}
-        disableNext={count <= slug + 20}
-        disablePrev={0 >= slug}
-      />
-      {children}
-    </div>
+    <main>
+      <div className={ListLayoutWrapper}>
+        <h1>{`< ${title} list >`}</h1>
+        <p>{count}</p>
+        <p>{`${slug + 1} - ${slug + 20}`}</p>
+        <PagingButtons
+          url={`${title}-list`}
+          offset={20}
+          disableNext={count <= slug + 20}
+          disablePrev={0 >= slug}
+        />
+        {children}
+      </div>
+    </main>
   );
 };
 

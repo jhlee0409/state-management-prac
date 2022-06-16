@@ -23,7 +23,7 @@ export const pokeImageBox = style({
   width: 100,
   height: 100,
   display: "flex",
-  backgroundColor: "white",
+  // backgroundColor: "white",
 });
 export const pokeImageWrapper = style({
   position: "relative",

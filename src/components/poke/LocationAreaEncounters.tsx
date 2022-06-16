@@ -12,6 +12,7 @@ const LocationAreaEncounters = () => {
     ["poke-location-area-encounters]", router.query.slug],
     () => getLocationAreaEncounters(+router.query.slug!)
   );
+
   return (
     <div>
       <button onClick={() => setShowInfo(!showInfo)} className={openDetailBtn}>
@@ -22,14 +23,16 @@ const LocationAreaEncounters = () => {
           <p>로딩중</p>
         ) : (
           <ul>
-            {data.map(({ location_area, version_details }: any) => {
-              return (
-                <li key={location_area.name} className={rowLi}>
-                  <span>{`name : ${location_area.name}`}</span>
-                  <DetailInfo details={version_details} />
-                </li>
-              );
-            })}
+            {data?.length !== 0
+              ? data.map(({ location_area, version_details }: any) => {
+                  return (
+                    <li key={location_area.name} className={rowLi}>
+                      <span>{`name : ${location_area.name}`}</span>
+                      <DetailInfo details={version_details} />
+                    </li>
+                  );
+                })
+              : "없음"}
           </ul>
         ))}
     </div>

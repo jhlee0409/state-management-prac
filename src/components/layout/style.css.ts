@@ -6,3 +6,13 @@ export const layout = style({
   margin: "0 auto",
   padding: "40px 40px",
 });
+
+export const listWrapper = style({
+  display: "flex",
+  gap: 10,
+  flexDirection: "column",
+});
+
+globalStyle(`${listWrapper}  h3`, {
+  textTransform: "uppercase",
+});

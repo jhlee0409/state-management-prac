@@ -1,10 +1,8 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
-import { pokeListWrapper, pokeNameLinkBox } from "./style.css";
 import { getBerries } from "@/apis/barryApi";
-import PagingButtons from "../libs/PagingButtons";
 import ListLayout from "../layout/ListLayout";
+import ListLink from "../libs/ListLink";
 
 const BerryList = () => {
   const router = useRouter();
@@ -15,18 +13,9 @@ const BerryList = () => {
   if (isLoading) return <p>로딩중</p>;
   return (
     <ListLayout title="BERRY" count={data.count}>
-      {data?.results?.map(
-        (item: { name: string; url: string }, index: number) => {
-          return (
-            <Link key={item.name} href={`${item.url.split("v2")[1]}`}>
-              <a className={pokeNameLinkBox}>
-                <span>{`${slug + index + 1}.`}</span>
-                <h3>{item.name}</h3>
-              </a>
-            </Link>
-          );
-        }
-      )}
+      {data?.results?.map((item: { name: string; url: string }) => {
+        return <ListLink data={item} key={item.name} />;
+      })}
     </ListLayout>
   );
 };

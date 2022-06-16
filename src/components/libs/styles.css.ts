@@ -16,3 +16,12 @@ globalStyle(`${pagingBtnBox} > a`, {
   padding: "5px 10px",
   borderRadius: 12,
 });
+
+export const nameLinkBox = style({
+  display: "flex",
+  gap: 5,
+  alignItems: "center",
+  fontWeight: "bold",
+  borderBottom: "1px solid white",
+  width: "fit-content",
+});

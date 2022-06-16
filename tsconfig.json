@@ -19,6 +19,7 @@
       "@/components/*": ["src/components/*"],
       "@/libs/*": ["src/components/libs/*"],
       "@/apis/*": ["src/apis/*"],
+      "@/app/*": ["src/app/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["src/styles/*"]
     }

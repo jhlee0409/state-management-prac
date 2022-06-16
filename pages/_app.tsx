@@ -7,7 +7,8 @@ import { AppContext, AppInitialProps, AppProps } from "next/app";
 import { Hydrate } from "react-query/hydration";
 import { ReactQueryDevtools } from "react-query/devtools";
 import LayoutComponent from "@/components/layout/layout";
-
+import { Provider } from "react-redux";
+import { store } from "../src/app/store";
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
   pageProps,
@@ -20,11 +21,13 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   return (
     <>
       <QueryClientProvider client={queryClientRef.current}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <LayoutComponent>
-            <Component {...pageProps} />
-          </LayoutComponent>
-        </Hydrate>
+        <Provider store={store}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <LayoutComponent>
+              <Component {...pageProps} />
+            </LayoutComponent>
+          </Hydrate>
+        </Provider>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </>

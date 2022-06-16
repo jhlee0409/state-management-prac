@@ -1,4 +1,3 @@
-import { sprinkles } from "@/styles/sprinkles.css";
 import { rowLi } from "./style.css";
 
 const Names = ({ names }: any) => {

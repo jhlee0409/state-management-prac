@@ -7,7 +7,7 @@ const fadeInAnimation = keyframes({
 });
 
 globalStyle("#app", {
-  padding: vars.space["1x"],
+  padding: vars.space["2x"],
   fontFamily: vars.fonts.fontFamily,
   backgroundColor: vars.colors.background,
   minHeight: "100vh",

@@ -1,8 +1,4 @@
-import {
-  createGlobalTheme,
-  createTheme,
-  createThemeContract,
-} from "@vanilla-extract/css";
+import { createTheme, createThemeContract } from "@vanilla-extract/css";
 import { vars as root } from "./vars.css";
 
 const colors = createThemeContract({

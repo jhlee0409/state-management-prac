@@ -53,6 +53,8 @@ export const vars = createGlobalTheme("#app", {
     "gray-700": "#374151",
     "gray-800": "#1f2937",
     "gray-900": "#111827",
+    orange: "orange",
+    black: "black",
   },
   borderRadius: {},
   fontFamily: {},
